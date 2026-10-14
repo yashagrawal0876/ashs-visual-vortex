@@ -302,11 +302,11 @@ function Certifications() {
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Partial<Record<"name" | "email" | "message", string>>>({});
   const [sent, setSent] = useState(false);
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const err: Record<string, string> = {};
+    const err: Partial<Record<"name" | "email" | "message", string>> = {};
     if (form.name.trim().length < 2) err.name = "Please enter your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) err.email = "Please enter a valid email address.";
     if (form.message.trim().length < 10) err.message = "Message should be at least 10 characters.";

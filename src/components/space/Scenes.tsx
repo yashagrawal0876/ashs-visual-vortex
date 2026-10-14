@@ -50,7 +50,7 @@ function Core({ lite }: { lite: boolean }) {
           {[1.9, 2.3, 2.75].map((r, i) => (
             <mesh key={r} rotation={[Math.PI / 2 + i * 0.35, i * 0.5, 0]}>
               <torusGeometry args={[r, 0.008, 8, 160]} />
-              <meshBasicMaterial color={["#5b8cff", "#6fd3ff", "#a78bfa"][i]} transparent opacity={0.55} />
+              <meshBasicMaterial color={["#5b8cff", "#6fd3ff", "#a78bfa"][i] ?? "#6fd3ff"} transparent opacity={0.55} />
             </mesh>
           ))}
         </group>
