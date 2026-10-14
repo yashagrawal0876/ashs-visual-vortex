@@ -131,8 +131,13 @@ export function Navbar() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      const p = document.getElementById("projects");
+      setDark(!!p && p.getBoundingClientRect().top < 60);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
