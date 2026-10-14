@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
-import { nav, profile } from "@/data/profile";
+import { nav } from "@/data/profile";
 
 const StarScene = lazy(() => import("./Scenes").then((m) => ({ default: m.StarScene })));
 
@@ -157,11 +157,11 @@ export function Navbar() {
     scrollToId(id);
   };
   return (
-    <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+    <header className={`fixed inset-x-0 top-4 z-50 flex justify-center px-4 text-foreground ${dark ? "zone-dark" : ""}`}>
       <nav
         aria-label="Primary"
         className={`glass flex w-full max-w-5xl items-center justify-between rounded-full transition-all duration-500 ${scrolled ? "px-4 py-2" : "px-6 py-3"}`}
-        style={{ color: "var(--nav-fg, inherit)" }}
+       
       >
         <button onClick={() => go("home")} className="font-display text-base font-bold tracking-tight">
           Yash<span className="text-core">.</span>
@@ -259,4 +259,3 @@ export function SectionHead({ eyebrow, title, sub }: { eyebrow: string; title: s
   );
 }
 
-export const _profile = profile;
