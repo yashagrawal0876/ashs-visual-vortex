@@ -188,7 +188,6 @@ function Skills() {
                 viewport={{ once: true }}
                 transition={{ delay: (i % 8) * 0.05, type: "spring", stiffness: 120, damping: 14 }}
                 whileHover={{ scale: 1.08, y: -6 }}
-                animate={{ y: [0, -6, 0] }}
                 className="group relative"
               >
                 <motion.div animate={{ y: [0, -8, 0] }} transition={{ repeat: Infinity, duration: 5 + (i % 5), ease: "easeInOut" }}
