@@ -102,11 +102,11 @@ function RoleCycler() {
 function Hero({ env }: { env: ReturnType<typeof useEnv> }) {
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden px-6 pt-28">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="relative z-10">
           <Reveal><p className="eyebrow">Second-year B.Tech · JECRC University</p></Reveal>
           <Reveal delay={0.1}>
-            <h1 className="mt-6 text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.9]">
+            <h1 className="mt-6 text-[clamp(2.8rem,7vw,5.6rem)] font-extrabold leading-[0.9]">
               YASH<br /><span className="text-core">AGRAWAL</span>
             </h1>
           </Reveal>
